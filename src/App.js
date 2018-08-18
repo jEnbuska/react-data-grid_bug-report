@@ -40,12 +40,14 @@ class App extends Component {
               <div className="app-content">
                   <div>
                   Content
-                  <ReactDataGrid
-                      columns={columns}
-                      rows={rows}
-                      rowsCount={rows.length}
-                      rowGetter={index => rows[index]}
-                  />
+                      <ReactDataGrid
+                          className="grid-outline"
+                          columns={columns}
+                          rows={rows}
+                          rowsCount={rows.length}
+                          minWidth={0}
+                          rowGetter={index => rows[index]}
+                      />
                   </div>
                   <h3>{stages[this.state.stageIndex]}</h3>
               </div>
@@ -59,7 +61,7 @@ class App extends Component {
             stageIndex: stageIndex<3 ? stageIndex+1 : stageIndex,
             closed: !closed
         })
-    }
+    };
 }
 
 export default App;
